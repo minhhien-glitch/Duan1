@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ThinkCode AI</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #2b2b46, #2c2c54);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .chat-container {
+        width: 400px;
+        height: 600px;
+        background: #ffffff;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .chat-header {
+        background: #2c2c54;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .chat-box {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        background: #f4f4f4;
+      }
+
+      .message {
+        margin-bottom: 12px;
+        padding: 10px 14px;
+        border-radius: 15px;
+        max-width: 75%;
+        word-wrap: break-word;
+        font-size: 14px;
+      }
+
+      .user {
+        background: #4e9cff;
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 5px;
+      }
+
+      .ai {
+        background: #e0e0e0;
+        color: black;
+        align-self: flex-start;
+        border-bottom-left-radius: 5px;
+      }
+
+      .chat-input {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+        background: white;
+      }
+
+      .chat-input input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        outline: none;
+        font-size: 14px;
+      }
+
+      .chat-input button {
+        margin-left: 8px;
+        padding: 10px 15px;
+        border-radius: 20px;
+        border: none;
+        background: #2c2c54;
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .chat-input button:hover {
+        background: #1e1e2f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">ThinkCode AI - Gia sư lập trình</div>
+
+      <div class="chat-box" id="chatBox"></div>
+
+      <div class="chat-input">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Nhập câu hỏi của bạn..."
+        />
+        <button onclick="sendMessage()">Gửi</button>
+      </div>
+    </div>
+
+    <script>
+      function sendMessage() {
+        const input = document.getElementById("userInput");
+        const chatBox = document.getElementById("chatBox");
+        const message = input.value.trim();
+
+        if (message === "") return;
+
+        // Tạo tin nhắn người dùng
+        const userMessage = document.createElement("div");
+        userMessage.classList.add("message", "user");
+        userMessage.textContent = message;
+        chatBox.appendChild(userMessage);
+
+        // Giả lập phản hồi AI
+        const aiMessage = document.createElement("div");
+        aiMessage.classList.add("message", "ai");
+        aiMessage.textContent =
+          "Bạn đã thử suy nghĩ theo hướng nào cho bài toán này chưa?";
+        chatBox.appendChild(aiMessage);
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        input.value = "";
+      }
+    </script>
+  </body>
+</html>
