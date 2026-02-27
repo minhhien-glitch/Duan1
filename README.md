@@ -1,1 +1,23 @@
-# Duan1
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 12: học thẻ a</title>
+  </head>
+  <body>
+    <a href="/Hoc/Baif12.html">| Home |</a>
+    <a href="/Hoc.html">| Học |</a>
+    <a href="/Thu1.html">| Thiết kế thử |</a>
+    <h1>Home</h1>
+    <p>
+      <hr>
+    Lorem ipsum dolor sit amet. <br>
+    Nam, ipsa tenetur! Placeat, magni! <br>
+    Deserunt asperiores adipisci consequatur odit! <br>
+    Temporibus harum ab dolor minima? <br>
+    <a href="/Thu1.html"><img src="/img/yourname2.jpg" alt="Ảnh phim Yourname" height="200"></a>
+    <hr>
+  </p>
+  </body>
+</html>
